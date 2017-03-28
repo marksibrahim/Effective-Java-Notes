@@ -9,7 +9,7 @@ Benefits
 * can guarantee a **singleton** \(a single instance is created\)
 * can limit what classes you expose 
 
-Enum class is a good example. 
+Enum class is a good example.
 
 Disadvantages
 
@@ -17,6 +17,18 @@ Disadvantages
 * Java Doc doesn't distinguish Static Factory Method from any other static method \(unlike constructors\)
 
 
+
+# Considering Builder Class over Constructors
+
+Benefits
+
+* When you have a lot of optional parameters
+  * Constructor would need a version for each variant
+* Pass all of the required parameters in initially, then you call setters for the optional parameters.
+
+Disadvantages
+
+* Adds complexity
 
 
 
