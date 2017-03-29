@@ -16,19 +16,21 @@ Disadvantages
 * can't be subclassed
 * Java Doc doesn't distinguish Static Factory Method from any other static method \(unlike constructors\)
 
-
-
 # Considering Builder Class over Constructors
 
 Benefits
 
 * When you have a lot of optional parameters
-  * Constructor would need a version for each variant
-* Pass all of the required parameters in initially, then you call setters for the optional parameters.
+  * Without builder class, you need a constructor for each variant
+* Pass all of the required parameters in initially to a builder
+  * Call setters for the optional parameters
+  * Lastly, build\(\) to get the object
+* Setter methods return the builder object, so you can string them together
+  * Ex. SomeObject = new SomeObject.Builder\(100, 10\).setX\(2\).setY\(4\).build\(\)
 
 Disadvantages
 
-* Adds complexity
+* Adds code complexity
 
 
 
