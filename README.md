@@ -31,20 +31,22 @@ Benefits
 Disadvantages
 
 * Adds code complexity
-## Enforce the singleton property with a private constructor \(or enum type\)
+  ## Enforce the singleton property with a private constructor \(or enum type\)
 
 What's the best way to implement a singleton? There are two common ways to implement a singleton:
 
 1. **Private Constructor** with a public instance as an attribute
 2. **Public Constructor** constructor that returns an instance if one has been created
 
-Both of these these patterns raise problems during **serialization. **These patterns also suffer from reflection attacks \(?\). 
+Both of these these patterns raise problems during **serialization. **These patterns also suffer from reflection attacks \(?\).
 
-The best approach is declare your class as an **enum type** to define the **singleton**. 
+The best approach is declare your class as an **enum type** to define the **singleton**.
 
 > enum types contains a fixed set of named values
 
-The enum type declaration, with INSTANCE containing an instance of your class functions just like a public constructor version and is compatible with serialization. 
+The enum type declaration, with INSTANCE containing an instance of your class functions just like a public constructor version and is compatible with serialization.
+
+**Plain English**: declare you class an an enum type to make sure only a single instance of your class is ever created. 
 
 # Using private constructors over abstract classes
 
