@@ -32,18 +32,14 @@ Disadvantages
 
 * Adds code complexity
 
-### Using private constructors over abstract classes
+# Using private constructors over abstract classes
 
-Writing class that only contain static methods/attributes
+When writing a class that only contain static methods/attributes, a group of methods operating on primitives.
 
-Group of methods operating on primitives.
+You want to prevent users from creating instances of these classes.
 
-Prevent users from creating instances of these classes.
+There is temptation to make abstract classes, but those can be subclassed then instantiated.
 
-Temptation to make abstract classes, but those can be subclassed then instantiated.
-
-JVM default gives you a constructor if you don'tt supply one, so just leaving it out isn't good enough.  
+JVM default gives you a constructor if you don't supply one, so just leaving it out isn't good enough.  
 The method is to use a private constructor, that throws an assertion error if anyone ever tried calling it.
-
-
 
