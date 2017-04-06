@@ -32,5 +32,18 @@ Disadvantages
 
 * Adds code complexity
 
+### Using private constructors over abstract classes
+
+Writing class that only contain static methods/attributes
+
+Group of methods operating on primitives.
+
+Prevent users from creating instances of these classes.
+
+Temptation to make abstract classes, but those can be subclassed then instantiated.
+
+JVM default gives you a constructor if you don'tt supply one, so just leaving it out isn't good enough.  
+The method is to use a private constructor, that throws an assertion error if anyone ever tried calling it.
+
 
 
