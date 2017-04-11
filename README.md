@@ -46,7 +46,7 @@ The best approach is declare your class as an **enum type** to define the **sing
 
 The enum type declaration, with INSTANCE containing an instance of your class functions just like a public constructor version and is compatible with serialization.
 
-**Plain English**: declare you class an an enum type to make sure only a single instance of your class is ever created. 
+**Plain English**: declare you class an an enum type to make sure only a single instance of your class is ever created.
 
 # Using private constructors over abstract classes
 
@@ -58,4 +58,26 @@ There is temptation to make abstract classes, but those can be subclassed then i
 
 JVM default gives you a constructor if you don't supply one, so just leaving it out isn't good enough.  
 The method is to use a private constructor, that throws an assertion error if anyone ever tried calling it.
+
+
+
+## Avoid Creating Unnecessary Objects
+
+### Why?
+
+* faster
+* less memory
+* stylish + more concise
+
+Example: using the string constructor inside of a loop. 
+
+An effective way to avoid creation of unnecessary objects is to use the Static Factory Method rather than constructors. 
+
+Example: when checking a boolean, rather than creating another boolean, use \`boolean.valueOf\(\)\`
+
+### Counter
+
+This can be tricky when working with mutable data, where you have to keep track of state. For immutable elements, err on the side of reuse. 
+
+
 
