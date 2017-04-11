@@ -59,8 +59,6 @@ There is temptation to make abstract classes, but those can be subclassed then i
 JVM default gives you a constructor if you don't supply one, so just leaving it out isn't good enough.  
 The method is to use a private constructor, that throws an assertion error if anyone ever tried calling it.
 
-
-
 ## Avoid Creating Unnecessary Objects
 
 ### Why?
@@ -69,15 +67,37 @@ The method is to use a private constructor, that throws an assertion error if an
 * less memory
 * stylish + more concise
 
-Example: using the string constructor inside of a loop. 
+Example: using the string constructor inside of a loop.
 
-An effective way to avoid creation of unnecessary objects is to use the Static Factory Method rather than constructors. 
+An effective way to avoid creation of unnecessary objects is to use the Static Factory Method rather than constructors.
 
 Example: when checking a boolean, rather than creating another boolean, use \`boolean.valueOf\(\)\`
 
 ### Counter
 
-This can be tricky when working with mutable data, where you have to keep track of state. For immutable elements, err on the side of reuse. 
+This can be tricky when working with mutable data, where you have to keep track of state. For immutable elements, err on the side of reuse.
+
+
+
+# Finalizers
+
+Don't use them.  
+Why:
+
+* There is no guarantee whether it will happen and if it does, when it will happen
+* Risk 'teardown' type functions not happening
+* Leads running out of memory
+* Actually increases run time of program
+
+Many GUI memory dumps happen to be from people attempting to use finalizers.
+
+When to use it:
+
+* As a safety net or to terminate noncritical native resources.
+
+
+
+
 
 
 
