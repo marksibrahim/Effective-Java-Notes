@@ -112,17 +112,23 @@ But if you must...
 
 HashCodes should obey:
 
-• repeated calls must yield same integer
+• repeated calls must yield same integer
 
-• it is not required that two different objects has different HashCodes
+• it is not required that two different objects has different HashCodes
 
-If you forget to override HashCodes \(when you override equals\), you may run into issues with object matching. 
+If you forget to override HashCodes \(when you override equals\), you may run into issues with object matching.
 
 For immutable objects, you can lazily cache your HashCodes, since your object won't change.
 
 
 
+# toString\(\) method
 
+in general the return value of toString\(\) is not very helpful, value return is in the format of: \[class name\], \[@\], \[hexdecimal\]
+
+toString is automatically invoked with print or debug statement
+
+always override toString\(\) to make it more useful, using unique characteristics of objects, i.e. for phone class, show phone number as toString return value
 
 
 
