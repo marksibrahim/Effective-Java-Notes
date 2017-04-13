@@ -59,7 +59,7 @@ There is temptation to make abstract classes, but those can be subclassed then i
 JVM default gives you a constructor if you don't supply one, so just leaving it out isn't good enough.  
 The method is to use a private constructor, that throws an assertion error if anyone ever tried calling it.
 
-## Avoid Creating Unnecessary Objects
+# Avoid Creating Unnecessary Objects
 
 ### Why?
 
@@ -73,11 +73,9 @@ An effective way to avoid creation of unnecessary objects is to use the Static F
 
 Example: when checking a boolean, rather than creating another boolean, use \`boolean.valueOf\(\)\`
 
-### Counter
+### When this might not be a good idea?
 
 This can be tricky when working with mutable data, where you have to keep track of state. For immutable elements, err on the side of reuse.
-
-
 
 # Finalizers
 
@@ -94,10 +92,6 @@ Many GUI memory dumps happen to be from people attempting to use finalizers.
 When to use it:
 
 * As a safety net or to terminate noncritical native resources.
-
-
-
-
 
 
 
