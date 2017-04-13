@@ -95,3 +95,22 @@ When to use it:
 
 
 
+# Should you override equals or not when creating classes
+
+Equals is a base method for classes, that you usually don't want to override.
+
+* Classes like thread are intentionally unique, so you wouldn't want to override equals
+* If the super class already provides an adequate equals method, why override it?
+
+But if you must...
+
+1. It must be reflexive x.equals\(x\) must be true
+2. It must be transitive. A = B and B = C then A = C
+3. It must be consistent, the same objects will always be equals.
+4. It must be symmetric x.equals\(y\) must return the same as y.equals\(x\)
+5. For non null reference value, x.equals\(null\) must return false
+
+
+
+
+
