@@ -93,8 +93,6 @@ When to use it:
 
 * As a safety net or to terminate noncritical native resources.
 
-
-
 # Should you override equals or not when creating classes
 
 Equals is a base method for classes, that you usually don't want to override.
@@ -109,6 +107,20 @@ But if you must...
 3. It must be consistent, the same objects will always be equals.
 4. It must be symmetric x.equals\(y\) must return the same as y.equals\(x\)
 5. For non null reference value, x.equals\(null\) must return false
+
+# Override HashCodes when you override Equals
+
+HashCodes should obey:
+
+• repeated calls must yield same integer
+
+• it is not required that two different objects has different HashCodes
+
+If you forget to override HashCodes \(when you override equals\), you may run into issues with object matching. 
+
+For immutable objects, you can lazily cache your HashCodes, since your object won't change.
+
+
 
 
 
