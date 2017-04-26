@@ -120,8 +120,6 @@ If you forget to override HashCodes \(when you override equals\), you may run in
 
 For immutable objects, you can lazily cache your HashCodes, since your object won't change.
 
-
-
 # toString\(\) method
 
 in general the return value of toString\(\) is not very helpful, value return is in the format of: \[class name\], \[@\], \[hexdecimal\]
@@ -129,6 +127,17 @@ in general the return value of toString\(\) is not very helpful, value return is
 toString is automatically invoked with print or debug statement
 
 always override toString\(\) to make it more useful, using unique characteristics of objects, i.e. for phone class, show phone number as toString return value
+
+# Consider implementing comparable
+
+When you have a class that has natural ordering, consider implementing comparable
+
+* take advantage of things like sort, hashmaps, trees
+
+compareTo\(object\) contract is
+
+* returns an int -1 = less than, 0 = equal, 1 = greater than.
+* Must be reflexive, symmetric and transitive
 
 
 
