@@ -139,5 +139,11 @@ compareTo\(object\) contract is
 * returns an int -1 = less than, 0 = equal, 1 = greater than.
 * Must be reflexive, symmetric and transitive
 
+# Consider Overriding Cloneable Judiciously
+
+It does not enforce any specific behavior, but is intended to indicate whether or not you can clone an object. 
+
+Typically, `x.clone()` equals `x` , but this is not enforced. Takeaway, `clone` is messy, avoid it!
+
 
 
