@@ -149,15 +149,7 @@ Typically, `x.clone()` equals `x` , but this is not enforced. Takeaway, `clone` 
 
 Restrict access to fields, methods, classes. Only expose the ones you need for your API to work.
 
+# Use accessor methods instead of public fields
 
-
-## Use accessor methods instead of public fields
-
-Rather than exposing data fields, specify how users should interact with the data in your class. This is especially important for mutable fields—so use getters and setters. 
-
-
-
-
-
-
+Rather than exposing data fields, specify how users should interact with the data in your class. This is especially important for mutable fields—so use getters and setters.
 
