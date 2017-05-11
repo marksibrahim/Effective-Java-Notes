@@ -153,3 +153,15 @@ Restrict access to fields, methods, classes. Only expose the ones you need for y
 
 Rather than exposing data fields, specify how users should interact with the data in your class. This is especially important for mutable fields—so use getters and setters.
 
+
+
+## Avoid inheritance over composition
+
+Inheritance- creating a subclass of a parent class  
+When you dont have a subtype use composition.
+
+Inside the class, have a private instance object of the would be parent class.  
+The new class is a 'wrapper' class. The class takes an instance of another class in order to define itself.
+
+
+
