@@ -161,11 +161,9 @@ When you dont have a subtype use composition.
 Inside the class, have a private instance object of the would be parent class.  
 The new class is a 'wrapper' class. The class takes an instance of another class in order to define itself.
 
-
-
 ## Minimize Mutability
 
-Why immutable? thread safe, don't need to worry about state \(allowing for greater extensibility\). 
+Why immutable? thread safe, don't need to worry about state \(allowing for greater extensibility\).
 
 Five Rules to aim for:
 
@@ -174,6 +172,18 @@ Five Rules to aim for:
 3. fields final, clearly expresses intent
 4. fields private, access is limited to avoid changes in state
 5. ensure mutable components have controlled access
+
+
+
+# Design and Document for Inheritance \(else no inheritance\)
+
+* document what a programmer would stand to lose by overriding a method 
+  * for example if that method is used by other methods 
+* expose as few methods as possible \(by using private/protected\)
+* to test a class that's intended for inheritance, a good strategy is to create a subclass 
+* constructors should not call methods that you can overwrite 
+
+Generally avoid inheritance, unless you explicitly plan for it by documenting the use cases, protecting methods,  and testing. 
 
 
 
