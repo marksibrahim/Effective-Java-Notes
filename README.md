@@ -173,8 +173,6 @@ Five Rules to aim for:
 4. fields private, access is limited to avoid changes in state
 5. ensure mutable components have controlled access
 
-
-
 # Design and Document for Inheritance \(else no inheritance\)
 
 * document what a programmer would stand to lose by overriding a method 
@@ -183,7 +181,24 @@ Five Rules to aim for:
 * to test a class that's intended for inheritance, a good strategy is to create a subclass 
 * constructors should not call methods that you can overwrite 
 
-Generally avoid inheritance, unless you explicitly plan for it by documenting the use cases, protecting methods,  and testing. 
+Generally avoid inheritance, unless you explicitly plan for it by documenting the use cases, protecting methods,  and testing.
+
+
+
+# Prefer interfaces to abstract classes
+
+Abstract class allows to implement classes, where interfaces you define the signature.
+
+You can implement multiple interfaces, instead of having a rigid hierarchy.  
+You can make use of mixins 
+
+Skeletal implementation
+
+* Class can inherit skeletal implementation or create an instance of it to access the methods
+
+Avoid abstract classes and use skeletal implementations of interface
+
+
 
 
 
