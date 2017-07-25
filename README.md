@@ -183,20 +183,26 @@ Five Rules to aim for:
 
 Generally avoid inheritance, unless you explicitly plan for it by documenting the use cases, protecting methods,  and testing.
 
-
-
 # Prefer interfaces to abstract classes
 
 Abstract class allows to implement classes, where interfaces you define the signature.
 
 You can implement multiple interfaces, instead of having a rigid hierarchy.  
-You can make use of mixins 
+You can make use of mixins
 
 Skeletal implementation
 
 * Class can inherit skeletal implementation or create an instance of it to access the methods
 
 Avoid abstract classes and use skeletal implementations of interface
+
+
+
+# Prefer class hierarchies to tagged classes
+
+Use an abstract class that implements a shared method \(area for circle, rectangle etc.\)
+
+Instead of using a flag, or variable to note the shapes type. Use class hierachary to properly subclass classes that have things common with one another. \(Shape -&gt; Circle & Rectangle, Rectangle -&gt; Square\)
 
 
 
