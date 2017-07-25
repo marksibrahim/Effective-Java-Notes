@@ -183,14 +183,12 @@ Five Rules to aim for:
 
 Generally avoid inheritance, unless you explicitly plan for it by documenting the use cases, protecting methods,  and testing.
 
-
-
 # Prefer interfaces to abstract classes
 
 Abstract class allows to implement classes, where interfaces you define the signature.
 
 You can implement multiple interfaces, instead of having a rigid hierarchy.  
-You can make use of mixins 
+You can make use of mixins
 
 Skeletal implementation
 
@@ -198,7 +196,11 @@ Skeletal implementation
 
 Avoid abstract classes and use skeletal implementations of interface
 
+# Use function objects to represent strategies
 
+In most languages, you have access to function pointers. For example, defining the comparison for sorting—you can pass a pointer to the comparison function.
+
+In Java, the equivalent is a class that only defines one method. The most common example is the interface `comparator` which implements the method compare. Then in your object, you can implement the `comparator` interface, which you can use for say sorting. This encapsulates a strategy. 
 
 
 
